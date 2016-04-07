@@ -71,6 +71,7 @@ LOCAL_OUT_PATH3=`pwd`"/moj-out/" #Alternative 2 (absolute path)
 LOG_PATH="./moj-out/"
 COUNT=0
 ALL=0
+mkdir moj-out
 
 #10 test for invalid arguments;  Expected return code for all: 1
 
