@@ -112,7 +112,7 @@ $INTERPRETER $TASK.$EXTENSION  --pretty-xml= 2> ${LOG_PATH}test008.err
 echo -n $? > ${LOG_PATH}test008.!!!
 
 #test009
-$INTERPRETER $TASK.$EXTENSION  --input=f --output=f1 --pretty-xml=4 --details=C --seach="hello" --what 2> ${LOG_PATH}test009.err
+$INTERPRETER $TASK.$EXTENSION  --input=${LOCAL_IN_PATH}test01.in --output=${LOCAL_OUT_PATH}test009.out --pretty-xml=4 --details=C --seach="hello" --what 2> ${LOG_PATH}test009.err
 echo -n $? > ${LOG_PATH}test009.!!!
 
 #non existing file on input (if file with that name exists in your computer, you have some problems)
