@@ -6,6 +6,8 @@ Verzia 0.42 - este neboli testy skontrolovane!
 
 Spustenie a použitie:
 
+DON'T RUN IT AS SUDO!!!!
+
 1. Download tento repozitar (vpravo hore Download, alebo git clone https://github.com/marusak/IPP-CLS-tests.git
 2. Ak ste to stihali cez download, tak to rozbalte, inak cd IPP-CLS-tests
 3. Zozenete si javu :(

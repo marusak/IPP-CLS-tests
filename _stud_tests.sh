@@ -54,7 +54,7 @@
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 #!!!!POZOR NA UMIESTENIE TESK!!!
-TASK=../cls
+TASK=cls
 #INTERPRETER="php -d open_basedir=\"\""
 #EXTENSION=php
 INTERPRETER=python3
