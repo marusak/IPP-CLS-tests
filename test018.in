@@ -1,0 +1,17 @@
+class A;
+class B;
+class A {virtual int f(void) =0;};
+class A;
+class C;
+class B : A {
+public:
+    int var;
+};
+class C {};
+class C;
+class D;
+class D : protected B, C {
+};
+class D;
+class D;
+class A;
