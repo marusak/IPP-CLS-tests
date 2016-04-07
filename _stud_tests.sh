@@ -84,7 +84,7 @@ $INTERPRETER $TASK.$EXTENSION  --invalidArgument 2> ${LOG_PATH}test001.err
 echo -n $? > ${LOG_PATH}test001.!!!
 
 #test002
-$INTERPRETER $TASK.$EXTENSION  --input=f --output=f1 --input=f 2> ${LOG_PATH}test002.err
+$INTERPRETER $TASK.$EXTENSION  --input=${LOCAL_IN_PATH}test01.in --output=${LOCAL_OUT_PATH}test01.out --input=${LOCAL_IN_PATH}test01.in 2> ${LOG_PATH}test002.err
 echo -n $? > ${LOG_PATH}test002.!!!
 
 #test003
