@@ -71,7 +71,7 @@ LOCAL_OUT_PATH3=`pwd`"/moj-out/" #Alternative 2 (absolute path)
 LOG_PATH="./moj-out/"
 COUNT=0
 ALL=0
-mkdir moj-out
+mkdir -p moj-out
 
 #10 test for invalid arguments;  Expected return code for all: 1
 
@@ -132,7 +132,7 @@ $INTERPRETER $TASK.$EXTENSION  --help=me 2> ${LOG_PATH}test00d.err
 echo -n $? > ${LOG_PATH}test00d.!!!
 
 #invalit output - no permission
-$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test01.in --output=/etc/shadow 2> ${LOG_PATH}test00e.err
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test01.in --output=/bin/kill 2> ${LOG_PATH}test00e.err
 echo -n $? > ${LOG_PATH}test00e.!!!
 
 # technically test01 but with output to stdout; Expected output: test00f.out; Expected return code: 0
