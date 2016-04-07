@@ -262,6 +262,12 @@ echo -n $? > ${LOG_PATH}test030.!!!
 # test31D: prettyXML test: test31D.out; Expected return code: 0
 $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test01.in --output=${LOCAL_OUT_PATH2}test031D.outD --details=D --pretty-xml=7 2> ${LOG_PATH}test031D.err
 echo -n $? > ${LOG_PATH}test031D.!!!
+
+# test32: not a conflict: test032.out; Expected return code: 0
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test032.in --output=${LOCAL_OUT_PATH2}test032.out 2> ${LOG_PATH}test032.err
+echo -n $? > ${LOG_PATH}test032.!!!
+
+
 #Print results
 RED='\033[0;31m'
 END='\033[0m'
