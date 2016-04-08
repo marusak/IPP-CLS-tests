@@ -8,5 +8,5 @@ public:
     int function(int x, int y);
 };
 class D : protected B, C {
-  using C::function(int x, int y);
+  using C::function;
 };

@@ -267,6 +267,17 @@ echo -n $? > ${LOG_PATH}test031D.!!!
 $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test032.in --output=${LOCAL_OUT_PATH2}test032.out 2> ${LOG_PATH}test032.err
 echo -n $? > ${LOG_PATH}test032.!!!
 
+# test33: one using on more fethods: test033.out; Expected return code: 0
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test033.in --output=${LOCAL_OUT_PATH2}test033.out --details=C 2> ${LOG_PATH}test033.err
+echo -n $? > ${LOG_PATH}test033.!!!
+
+# test34: instance name and method name cannot be the same: test034.out; Expected return code: 21
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test034.in --output=${LOCAL_OUT_PATH2}test034.out 2> ${LOG_PATH}test034.err
+echo -n $? > ${LOG_PATH}test034.!!!
+
+# test35: instance name and method name cannot be the same when in base classes: test035.out; Expected return code: 21
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test035.in --output=${LOCAL_OUT_PATH2}test035.out 2> ${LOG_PATH}test035.err
+echo -n $? > ${LOG_PATH}test035.!!!
 
 #Print results
 RED='\033[0;31m'
