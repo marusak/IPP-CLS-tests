@@ -75,6 +75,10 @@ mkdir -p moj-out
 
 #10 test for invalid arguments;  Expected return code for all: 1
 
+#test0H --help
+$INTERPRETER $TASK.$EXTENSION --help 1>${LOCAL_OUT_PATH}0H.help 2> ${LOG_PATH}0H.err
+echo -n $? > ${LOG_PATH}test0H.!!!
+
 #test000
 $INTERPRETER $TASK.$EXTENSION notThis 2> ${LOG_PATH}test000.err
 echo -n $? > ${LOG_PATH}test000.!!!
@@ -335,6 +339,24 @@ for i in `ls ./ref-out/ | grep -e '.*\.out$'`
       ((COUNT++))
       printf "${RED}Wrong format when pretty-xml=7, test031D \n"
     fi
+
+    #test for help
+    ((ALL++))
+    if [ ! -f "${LOCAL_OUT_PATH}"0H.help ]; then
+      ((COUNT++))
+      printf "${GREEN}---------------------------------------------------${END}\n"
+      printf "${RED}No help! \n"
+    else
+        f=`cat ./moj-out/0H.help`
+        len=${#f}
+        if [ "$len" -lt 20 ]; then
+          ((COUNT++))
+          printf "${GREEN}---------------------------------------------------${END}\n"
+          printf "${RED}Help is too short! \n"
+      fi
+    fi
+
+
 
 
 
