@@ -53,7 +53,7 @@
 #
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-#!!!!POZOR NA UMIESTENIE TESK!!!
+#!!!!POZOR NA UMIESTENIE TASK!!!
 TASK=cls
 #INTERPRETER="php -d open_basedir=\"\""
 #EXTENSION=php
@@ -143,6 +143,10 @@ echo -n $? > ${LOG_PATH}test00e.!!!
 # technically test01 but with output to stdout; Expected output: test00f.out; Expected return code: 0
 $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test01.in >${LOCAL_OUT_PATH}test00f.out 2> ${LOG_PATH}test00f.err
 echo -n $? > ${LOG_PATH}test00f.!!!
+
+#test00g --conflicts withou --details
+$INTERPRETER $TASK.$EXTENSION  --input=${LOCAL_IN_PATH}test01.in --output=${LOCAL_OUT_PATH}test00g.out --conflicts 2> ${LOG_PATH}test00g.err
+echo -n $? > ${LOG_PATH}test00g.!!!
 
 # test01: zakladni strom dedicnosti; Expected output: test01.out; Expected return code: 0
 $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test01.in --output=${LOCAL_OUT_PATH}test01.out 2> ${LOG_PATH}test01.err
@@ -370,7 +374,27 @@ echo -n $? > ${LOG_PATH}test56.!!!
 $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test57.in --output=${LOCAL_OUT_PATH2}test57.out --details=C 2> ${LOG_PATH}test57.err
 echo -n $? > ${LOG_PATH}test57.!!!
 
+# test58: static and virtual instance: test58.out; Expected return code: 4
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test58.in --output=${LOCAL_OUT_PATH2}test58.out 2> ${LOG_PATH}test58.err
+echo -n $? > ${LOG_PATH}test58.!!!
 
+# test59: static and virtual method: test59.out; Expected return code: 4
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test59.in --output=${LOCAL_OUT_PATH2}test59.out 2> ${LOG_PATH}test59.err
+echo -n $? > ${LOG_PATH}test59.!!!
+
+# test60: unknown class as type: test60.out; Expected return code: 4
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test60.in --output=${LOCAL_OUT_PATH2}test60.out 2> ${LOG_PATH}test60.err
+echo -n $? > ${LOG_PATH}test60.!!!
+
+# test61: Diamond conflict --conflicts: test61.out; Expected return code: 4
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test52.in --output=${LOCAL_OUT_PATH2}test61.out --details=D --conflicts 2> ${LOG_PATH}test61.err
+echo -n $? > ${LOG_PATH}test61.!!!
+
+# test62: Diamond conflict private --conflicts: test61.out; Expected return code: 4
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test53.in --output=${LOCAL_OUT_PATH2}test62.out --details=D --conflicts 2> ${LOG_PATH}test62.err
+echo -n $? > ${LOG_PATH}test62.!!!
+
+#TEST 63
 
 
 
