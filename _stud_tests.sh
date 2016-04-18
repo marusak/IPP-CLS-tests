@@ -204,7 +204,7 @@ echo -n $? > ${LOG_PATH}test13.!!!
 $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH2}test014.in --output=${LOCAL_OUT_PATH}test014.out 2> ${LOG_PATH}test014.err
 echo -n $? > ${LOG_PATH}test014.!!!
 
-# test014: Test similiar to test08, but conflict in fuctions solved with using. Expected output: test015.out Expected return code: 0
+# test015: Test similiar to test08, but conflict in fuctions solved with using. Expected output: test015.out Expected return code: 0
 $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH2}test015.in --output=${LOCAL_OUT_PATH}test015.out --details=D 2> ${LOG_PATH}test015.err
 echo -n $? > ${LOG_PATH}test015.!!!
 
