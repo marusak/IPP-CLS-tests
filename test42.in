@@ -1,0 +1,11 @@
+class A{
+    private:
+    int f()=0;
+};
+
+class B: private A{
+};
+
+class C: private B{
+};
+

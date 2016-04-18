@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<class kind="concrete" name="A">
+    <private>
+        <attributes>
+            <attribute name="l" scope="instance" type="long int"/>
+            <attribute name="sh" scope="instance" type="short int"/>
+            <attribute name="z" scope="instance" type="int"/>
+            <attribute name="y" scope="instance" type="char"/>
+            <attribute name="w" scope="instance" type="wchar_t"/>
+            <attribute name="f" scope="instance" type="float"/>
+            <attribute name="s" scope="instance" type="signed int"/>
+            <attribute name="x" scope="instance" type="bool"/>
+            <attribute name="d" scope="instance" type="double"/>
+            <attribute name="u" scope="instance" type="unsigned char"/>
+            <attribute name="uli" scope="instance" type="unsigned long int"/>
+            <attribute name="pspi" scope="instance" type="signed short int *"/>
+        </attributes>
+    </private>
+</class>

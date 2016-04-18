@@ -72,6 +72,7 @@ LOG_PATH="./moj-out/"
 COUNT=0
 ALL=0
 mkdir -p moj-out
+rm moj-out/*
 
 #10 test for invalid arguments;  Expected return code for all: 1
 
@@ -283,6 +284,72 @@ echo -n $? > ${LOG_PATH}test034.!!!
 $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test035.in --output=${LOCAL_OUT_PATH2}test035.out 2> ${LOG_PATH}test035.err
 echo -n $? > ${LOG_PATH}test035.!!!
 
+# test36: empty input: test036.out; Expected return code: 0
+$INTERPRETER $TASK.$EXTENSION --input=ref-out/test005.out --output=${LOCAL_OUT_PATH2}test036.out 2> ${LOG_PATH}test036.err
+echo -n $? > ${LOG_PATH}test036.!!!
+
+# test37: details of empty class: test037.out; Expected return code: 0
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test037.in --output=${LOCAL_OUT_PATH2}test037.out --details=A 2> ${LOG_PATH}test037.err
+echo -n $? > ${LOG_PATH}test037.!!!
+
+# test38: details of unknown class: test038.out; Expected return code: 0
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test037.in --output=${LOCAL_OUT_PATH2}test038.out --details=B 2> ${LOG_PATH}test038.err
+echo -n $? > ${LOG_PATH}test038.!!!
+
+# test39: details of base class: test039.out; Expected return code: 0
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test039.in --output=${LOCAL_OUT_PATH2}test039.out --details=A 2> ${LOG_PATH}test039.err
+echo -n $? > ${LOG_PATH}test039.!!!
+
+# test40: inheritance of private atributes: test40.out; Expected return code: 0
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test40.in --output=${LOCAL_OUT_PATH2}test40.out --details 2> ${LOG_PATH}test40.err
+echo -n $? > ${LOG_PATH}test40.!!!
+
+#TEST 41 s --details=B sa nepusta! neviem co ma byt vysledok
+
+# test42: private pure virtual method: test42.out; Expected return code: 0
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test42.in --output=${LOCAL_OUT_PATH2}test42.out 2> ${LOG_PATH}test42.err
+echo -n $? > ${LOG_PATH}test42.!!!
+
+# test43: triangle conflict: test43.out; Expected return code: 21
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test43.in --output=${LOCAL_OUT_PATH2}test43.out 2> ${LOG_PATH}test43.err
+echo -n $? > ${LOG_PATH}test43.!!!
+
+# test44: triangle conflict solved by overriding: test44.out; Expected return code: 0
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test44.in --output=${LOCAL_OUT_PATH2}test44.out 2> ${LOG_PATH}test44.err
+echo -n $? > ${LOG_PATH}test44.!!!
+
+# test45: triangle conflict solved by using:: : test45.out; Expected return code: 0
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test45.in --output=${LOCAL_OUT_PATH2}test45.out --details=C 2> ${LOG_PATH}test45.err
+echo -n $? > ${LOG_PATH}test45.!!!
+
+# test46: triangle conflict solved by overiding method: test46.out; Expected return code: 0
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test46.in --output=${LOCAL_OUT_PATH2}test46.out --details=C 2> ${LOG_PATH}test46.err
+echo -n $? > ${LOG_PATH}test46.!!!
+
+# test47: base class cannot be the same class: test47.out; Expected return code: 4
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test47.in --output=${LOCAL_OUT_PATH2}test47.out 2> ${LOG_PATH}test47.err
+echo -n $? > ${LOG_PATH}test47.!!!
+
+# test48: duplicit base class: test48.out; Expected return code: 4
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test48.in --output=${LOCAL_OUT_PATH2}test48.out 2> ${LOG_PATH}test48.err
+echo -n $? > ${LOG_PATH}test48.!!!
+
+# test49: unknown base class: test49.out; Expected return code: 4
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test49.in --output=${LOCAL_OUT_PATH2}test49.out 2> ${LOG_PATH}test49.err
+echo -n $? > ${LOG_PATH}test49.!!!
+
+# test50: static members: test50.out; Expected return code: 0
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test50.in --output=${LOCAL_OUT_PATH2}test50.out --details=B 2> ${LOG_PATH}test50.err
+echo -n $? > ${LOG_PATH}test50.!!!
+
+# test51: types: test51.out; Expected return code: 0
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test51.in --output=${LOCAL_OUT_PATH2}test51.out --details=A 2> ${LOG_PATH}test51.err
+echo -n $? > ${LOG_PATH}test51.!!!
+
+
+
+
+
 #Print results
 RED='\033[0;31m'
 END='\033[0m'
@@ -360,7 +427,6 @@ for i in `ls ./ref-out/ | grep -e '.*\.out$'`
 
 
 
-    rm moj-out/*
     PASSED=$((ALL-COUNT))
     printf "${GREEN}===================================================${END}\n"
     printf "Failed ${BRED}$COUNT${END} "`[[ $COUNT -eq 1 ]] && echo -n "test" || echo -n "tests"`;

@@ -1,0 +1,16 @@
+class A{
+    bool x;
+    char y;
+    int z;
+    float f;
+    double d;
+    wchar_t w;
+
+    signed int s;
+    unsigned char u;
+    short int sh;
+    long int l;
+
+    unsigned long int uli;
+    signed short int *pspi;
+};
