@@ -22,4 +22,6 @@ Ak najdete chybu, napiste mi na Fb alebo xmarus06@stud.fit.vutbr.cz
 
 PRIDAVAJTE NOVE TESTY! (poslite mi ich, vyuzite moznotsi gitu...)
 
+Note: test 12 je rozsirenie CFL.
+
 Have fun!

@@ -292,8 +292,8 @@ echo -n $? > ${LOG_PATH}test036.!!!
 $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test037.in --output=${LOCAL_OUT_PATH2}test037.out --details=A 2> ${LOG_PATH}test037.err
 echo -n $? > ${LOG_PATH}test037.!!!
 
-# test38: details of unknown class: test038.out; Expected return code: 0
-$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test037.in --output=${LOCAL_OUT_PATH2}test038.out --details=B 2> ${LOG_PATH}test038.err
+# test38: details of unknown class - JeXamXML fail diff: test038.out; Expected return code: 0
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test037.in --output=${LOCAL_OUT_PATH2}test038.outDF --details=B 2> ${LOG_PATH}test038.err
 echo -n $? > ${LOG_PATH}test038.!!!
 
 # test39: details of base class: test039.out; Expected return code: 0
@@ -345,6 +345,30 @@ echo -n $? > ${LOG_PATH}test50.!!!
 # test51: types: test51.out; Expected return code: 0
 $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test51.in --output=${LOCAL_OUT_PATH2}test51.out --details=A 2> ${LOG_PATH}test51.err
 echo -n $? > ${LOG_PATH}test51.!!!
+
+# test52: diamond conflict: test52.out; Expected return code: 21
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test52.in --output=${LOCAL_OUT_PATH2}test52.out 2> ${LOG_PATH}test52.err
+echo -n $? > ${LOG_PATH}test52.!!!
+
+# test53: diamond conflict private atrubutes: test53.out; Expected return code: 21
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test53.in --output=${LOCAL_OUT_PATH2}test53.out 2> ${LOG_PATH}test53.err
+echo -n $? > ${LOG_PATH}test53.!!!
+
+# test54: diamond conflict solved by overridng: test54.out; Expected return code: 0
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test54.in --output=${LOCAL_OUT_PATH2}test54.out --details=D 2> ${LOG_PATH}test54.err
+echo -n $? > ${LOG_PATH}test54.!!!
+
+# test55: privacy in more blocks: test55.out; Expected return code: 0
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test55.in --output=${LOCAL_OUT_PATH2}test55.out --details=A 2> ${LOG_PATH}test55.err
+echo -n $? > ${LOG_PATH}test55.!!!
+
+# test56: conrete and abstract: test56.out; Expected return code: 0
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test56.in --output=${LOCAL_OUT_PATH2}test56.out 2> ${LOG_PATH}test56.err
+echo -n $? > ${LOG_PATH}test56.!!!
+
+# test57: type is different class: test57.out; Expected return code: 0
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test57.in --output=${LOCAL_OUT_PATH2}test57.out --details=C 2> ${LOG_PATH}test57.err
+echo -n $? > ${LOG_PATH}test57.!!!
 
 
 
@@ -423,6 +447,15 @@ for i in `ls ./ref-out/ | grep -e '.*\.out$'`
       fi
     fi
 
+    #one for only XML head
+    ((ALL++))
+    d=`cat "${LOCAL_OUT_PATH2}"test038.outDF`
+    f=`grep "$d" ./ref-out/test038.outDF`
+    if [[ ! $f ]]; then
+      printf "${GREEN}---------------------------------------------------${END}\n"
+      ((COUNT++))
+      printf "${RED}When no result found, only XML head is printed, test038 \n"
+    fi
 
 
 

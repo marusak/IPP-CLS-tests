@@ -1,0 +1,15 @@
+class A{
+    int x;
+    
+    public:
+    int y;
+    int z;
+    
+    protected:
+    private:
+    int f();
+    protected:
+    int f1();
+    public:
+    int f2();
+};
