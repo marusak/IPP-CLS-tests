@@ -1,6 +1,6 @@
 class A{
     private:
-    int f()=0;
+    virtual int f()=0;
 };
 
 class B: private A{
@@ -8,4 +8,3 @@ class B: private A{
 
 class C: private B{
 };
-
