@@ -396,6 +396,11 @@ echo -n $? > ${LOG_PATH}test62.!!!
 
 #TEST 63
 
+# test64: --conflicts: test64.out; Expected return code: 0
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test64.in --output=${LOCAL_OUT_PATH2}test64.out --details=C --conflicts 2> ${LOG_PATH}test64.err
+echo -n $? > ${LOG_PATH}test64.!!!
+
+
 
 
 #Print results

@@ -22,6 +22,6 @@ Ak najdete chybu, napiste mi na Fb alebo xmarus06@stud.fit.vutbr.cz
 
 PRIDAVAJTE NOVE TESTY! (poslite mi ich, vyuzite moznotsi gitu...)
 
-Note: testy 12, 00g,  su rozsirenie CFL.
+Note: testy 12, 00g, 64, 61, 62  su rozsirenie CFL.
 
 Have fun!
