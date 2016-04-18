@@ -212,7 +212,7 @@ echo -n $? > ${LOG_PATH}test015.!!!
 $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH2}test016.in --output=${LOCAL_OUT_PATH}test016.out 2> ${LOG_PATH}test016.err
 echo -n $? > ${LOG_PATH}test016.!!!
 
-# test016: Test 03, but with funky names of variables, methods, and classes; Expected output: test09.out; Expected return code: 0
+# test017: Test 03, but with funky names of variables, methods, and classes; Expected output: test09.out; Expected return code: 0
 $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH2}test017.in --output=${LOCAL_OUT_PATH}test017.out --details=____ 2> ${LOG_PATH}test017.err
 echo -n $? > ${LOG_PATH}test017.!!!
 
