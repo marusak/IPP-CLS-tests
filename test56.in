@@ -1,9 +1,9 @@
 class A{
-    int f() = 0;
+    virtual int f() = 0;
 };
 
 class A1{
-    int x() = 0;
+    virtual int x() = 0;
 };
 
 

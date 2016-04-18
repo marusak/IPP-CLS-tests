@@ -402,6 +402,9 @@ echo -n $? > ${LOG_PATH}test63.!!!
 $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test64.in --output=${LOCAL_OUT_PATH2}test64.out --details=C --conflicts 2> ${LOG_PATH}test64.err
 echo -n $? > ${LOG_PATH}test64.!!!
 
+# test65: pure virtual but not virtual: test65.out; Expected return code: 4
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test65.in --output=${LOCAL_OUT_PATH2}test65.out 2> ${LOG_PATH}test65.err
+echo -n $? > ${LOG_PATH}test65.!!!
 
 
 
