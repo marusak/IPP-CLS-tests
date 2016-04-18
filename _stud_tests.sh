@@ -390,11 +390,13 @@ echo -n $? > ${LOG_PATH}test60.!!!
 $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test52.in --output=${LOCAL_OUT_PATH2}test61.out --details=D --conflicts 2> ${LOG_PATH}test61.err
 echo -n $? > ${LOG_PATH}test61.!!!
 
-# test62: Diamond conflict private --conflicts: test61.out; Expected return code: 4
+# test62: Diamond conflict private --conflicts: test62.out; Expected return code: 4
 $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test53.in --output=${LOCAL_OUT_PATH2}test62.out --details=D --conflicts 2> ${LOG_PATH}test62.err
 echo -n $? > ${LOG_PATH}test62.!!!
 
-#TEST 63
+# test63: Conflict inside --conflicts: test63.out; Expected return code: 0
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test63.in --output=${LOCAL_OUT_PATH2}test63.out --details=E --conflicts 2> ${LOG_PATH}test63.err
+echo -n $? > ${LOG_PATH}test63.!!!
 
 # test64: --conflicts: test64.out; Expected return code: 0
 $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test64.in --output=${LOCAL_OUT_PATH2}test64.out --details=C --conflicts 2> ${LOG_PATH}test64.err
