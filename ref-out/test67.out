@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<class kind="concrete" name="D">
+    <inheritance>
+        <from name="C" privacy="private"/>
+        <from name="B" privacy="private"/>
+    </inheritance>
+    <conflicts>
+        <member name="x">
+            <class name="A">
+                <private>
+                    <method name="x" scope="instance" type="int">
+                        <arguments>
+                            <argument name="arg" type="int"/>
+                        </arguments>
+                    </method>
+                </private>
+            </class>
+        </member>
+    </conflicts>
+</class>

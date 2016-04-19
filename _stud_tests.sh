@@ -388,11 +388,11 @@ echo -n $? > ${LOG_PATH}test59.!!!
 $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test60.in --output=${LOCAL_OUT_PATH2}test60.out 2> ${LOG_PATH}test60.err
 echo -n $? > ${LOG_PATH}test60.!!!
 
-# test61: Diamond conflict --conflicts: test61.out; Expected return code: 4
+# test61: Diamond conflict --conflicts: test61.out; Expected return code: 0
 $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test52.in --output=${LOCAL_OUT_PATH2}test61.out --details=D --conflicts 2> ${LOG_PATH}test61.err
 echo -n $? > ${LOG_PATH}test61.!!!
 
-# test62: Diamond conflict private --conflicts: test62.out; Expected return code: 4
+# test62: Diamond conflict private --conflicts: test62.out; Expected return code: 0
 $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test53.in --output=${LOCAL_OUT_PATH2}test62.out --details=D --conflicts 2> ${LOG_PATH}test62.err
 echo -n $? > ${LOG_PATH}test62.!!!
 
@@ -412,6 +412,13 @@ echo -n $? > ${LOG_PATH}test65.!!!
 $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test63.in --output=${LOCAL_OUT_PATH2}test66.out --details=C --conflicts 2> ${LOG_PATH}test66.err
 echo -n $? > ${LOG_PATH}test66.!!!
 
+# test67: test 62 but with method: test67.out; Expected return code: 0
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test67.in --output=${LOCAL_OUT_PATH2}test67.out --details=D --conflicts 2> ${LOG_PATH}test67.err
+echo -n $? > ${LOG_PATH}test67.!!!
+
+# test68: Test 66 but with methods: test68.out; Expected return code: 0
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test68.in --output=${LOCAL_OUT_PATH2}test68.out --details=C --conflicts 2> ${LOG_PATH}test68.err
+echo -n $? > ${LOG_PATH}test68.!!!
 
 
 

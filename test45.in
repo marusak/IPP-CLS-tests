@@ -6,6 +6,6 @@ class A{
 class B: public A{
 };
 
-class C: public A, public B{
+class C: public B{
   using B::x;
 };
