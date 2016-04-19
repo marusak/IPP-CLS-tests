@@ -421,6 +421,9 @@ $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test68.in --output=${LOCAL
 echo -n $? > ${LOG_PATH}test68.!!!
 
 
+# test69: Deep inheritance of members: test69.out; Expected return code: 0
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test69.in --output=${LOCAL_OUT_PATH2}test69.out --details 2> ${LOG_PATH}test69.err
+echo -n $? > ${LOG_PATH}test69.!!!
 
 
 #Print results
