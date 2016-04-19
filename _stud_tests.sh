@@ -308,7 +308,9 @@ echo -n $? > ${LOG_PATH}test039.!!!
 $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test40.in --output=${LOCAL_OUT_PATH2}test40.out --details 2> ${LOG_PATH}test40.err
 echo -n $? > ${LOG_PATH}test40.!!!
 
-#TEST 41 s --details=B sa nepusta! neviem co ma byt vysledok
+# test41: using on more than one atribute: test41.out; Expected return code: 0
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test41.in --output=${LOCAL_OUT_PATH2}test41.out --details=B 2> ${LOG_PATH}test41.err
+echo -n $? > ${LOG_PATH}test41.!!!
 
 # test42: private pure virtual method: test42.out; Expected return code: 0
 $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test42.in --output=${LOCAL_OUT_PATH2}test42.out 2> ${LOG_PATH}test42.err
