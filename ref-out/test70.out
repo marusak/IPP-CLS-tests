@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<model>
+    <class kind="concrete" name="A">
+        <private>
+            <methods>
+                <method name="f1" scope="instance" type="int">
+                    <arguments>
+                        <argument name="" type="unsigned long *"/>
+                    </arguments>
+                </method>
+                <method name="f" scope="instance" type="int">
+                    <arguments>
+                        <argument name="" type="int"/>
+                        <argument name="f" type="int"/>
+                        <argument name="" type="char"/>
+                        <argument name="" type="int"/>
+                    </arguments>
+                </method>
+                <method name="f" scope="instance" type="int">
+                    <arguments>
+                        <argument name="" type="int"/>
+                    </arguments>
+                </method>
+            </methods>
+        </private>
+    </class>
+</model>

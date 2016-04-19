@@ -425,6 +425,9 @@ echo -n $? > ${LOG_PATH}test68.!!!
 $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test69.in --output=${LOCAL_OUT_PATH2}test69.out --details 2> ${LOG_PATH}test69.err
 echo -n $? > ${LOG_PATH}test69.!!!
 
+# test70: Anonymous method arguments: test70.out; Expected return code: 0
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test70.in --output=${LOCAL_OUT_PATH2}test70.out --details 2> ${LOG_PATH}test70.err
+echo -n $? > ${LOG_PATH}test70.!!!
 
 #Print results
 RED='\033[0;31m'
@@ -502,7 +505,7 @@ for i in `ls ./ref-out/ | grep -e '.*\.out$'`
     #one for only XML head
     ((ALL++))
     d=`cat "${LOCAL_OUT_PATH2}"test038.outDF`
-    f=`grep "$d" ./ref-out/test038.outDF`
+    f=`grep -i "$d" ./ref-out/test038.outDF`
     if [[ ! $f ]]; then
       printf "${GREEN}---------------------------------------------------${END}\n"
       ((COUNT++))
