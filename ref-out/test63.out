@@ -3,18 +3,4 @@
     <inheritance>
         <from name="D" privacy="public"/>
     </inheritance>
-    <conflicts>
-        <member name="x">
-            <class name="A">
-                <public>
-                    <attribute name="x" scope="instance" type="int"/>
-                </public>
-            </class>
-            <class name="B">
-                <public>
-                    <attribute name="x" scope="instance" type="int"/>
-                </public>
-            </class>
-        </member>
-    </conflicts>
 </class>

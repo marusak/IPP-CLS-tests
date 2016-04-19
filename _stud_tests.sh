@@ -408,6 +408,12 @@ echo -n $? > ${LOG_PATH}test64.!!!
 $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test65.in --output=${LOCAL_OUT_PATH2}test65.out 2> ${LOG_PATH}test65.err
 echo -n $? > ${LOG_PATH}test65.!!!
 
+# test66: Test 63 but --detials=C : test66.out; Expected return code: 0
+$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test63.in --output=${LOCAL_OUT_PATH2}test66.out --details=C --conflicts 2> ${LOG_PATH}test66.err
+echo -n $? > ${LOG_PATH}test66.!!!
+
+
+
 
 
 #Print results

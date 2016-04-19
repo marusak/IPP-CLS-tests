@@ -6,12 +6,7 @@
     </inheritance>
     <conflicts>
         <member name="x">
-            <class name="C">
-                <private>
-                    <attribute name="x" scope="instance" type="int"/>
-                </private>
-            </class>
-            <class name="B">
+            <class name="A">
                 <private>
                     <attribute name="x" scope="instance" type="int"/>
                 </private>
