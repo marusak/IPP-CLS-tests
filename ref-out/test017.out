@@ -11,13 +11,4 @@
             </attribute>
         </attributes>
     </protected>
-    <private>
-        <methods>
-            <method name="a_b_c_0" type="int" scope="instance">
-                <from name="Aclass" />
-                <virtual pure="yes" />
-                <arguments></arguments>
-            </method>
-        </methods>
-    </private>
 </class>

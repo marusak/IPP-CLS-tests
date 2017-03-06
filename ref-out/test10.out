@@ -19,15 +19,6 @@
                 <attribute name="var" type="int" scope="instance" />
             </attributes>
         </public>
-        <private>
-            <methods>
-                <method name="f" type="int" scope="instance">
-                    <from name="A" />
-                    <virtual pure="yes" />
-                    <arguments></arguments>
-                </method>
-            </methods>
-        </private>
     </class>
     <class name="C" kind="concrete">
     </class>
@@ -43,14 +34,5 @@
                 </attribute>
             </attributes>
         </protected>
-        <private>
-            <methods>
-                <method name="f" type="int" scope="instance">
-                    <from name="A" />
-                    <virtual pure="yes" />
-                    <arguments></arguments>
-                </method>
-            </methods>
-        </private>
     </class>
 </model>

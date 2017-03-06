@@ -6,11 +6,6 @@
     </inheritance>
     <private>
         <methods>
-            <method name="f" scope="instance" type="int">
-                <from name="A"/>
-                <virtual pure="yes"/>
-                <arguments/>
-            </method>
             <method name="function" scope="instance" type="int">
                 <from name="C"/>
                 <arguments>
