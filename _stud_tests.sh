@@ -212,10 +212,6 @@ echo -n $? > ${LOG_PATH}test016.!!!
 $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH2}test017.in --output=${LOCAL_OUT_PATH}test017.out --details=____ 2> ${LOG_PATH}test017.err
 echo -n $? > ${LOG_PATH}test017.!!!
 
-# test018: test 10, but with forward class declaration; Expected output: test018.out; Expected return code: 0
-$INTERPRETER $TASK.$EXTENSION --details --input=${LOCAL_IN_PATH3}test018.in --output=${LOCAL_OUT_PATH}test018.out 2> ${LOG_PATH}test018.err
-echo -n $? > ${LOG_PATH}test018.!!!
-
 # test019: Static methods and instances; Expected output: test019.out; Expected return code: 0
 $INTERPRETER $TASK.$EXTENSION --details --input=${LOCAL_IN_PATH3}test019.in --output=${LOCAL_OUT_PATH}test019.out 2> ${LOG_PATH}test019.err
 echo -n $? > ${LOG_PATH}test019.!!!
