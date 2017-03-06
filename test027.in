@@ -2,7 +2,7 @@ class A{
 public:
   A();
   int f();
-  A(int x){}
+  A(int x){};
   A(int x, int y){};
   ~A(){};
 };
