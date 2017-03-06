@@ -13,7 +13,7 @@
                 <method name="~B" scope="instance" type="void">
                     <arguments/>
                 </method>
-                <method name="B" scope="instance" type="B">
+                <method name="B" scope="instance" type="void">
                     <arguments/>
                 </method>
             </methods>
@@ -25,10 +25,10 @@
                 <method name="f" scope="instance" type="int">
                     <arguments/>
                 </method>
-                <method name="A" scope="instance" type="A">
+                <method name="A" scope="instance" type="void">
                     <arguments/>
                 </method>
-                <method name="A" scope="instance" type="A">
+                <method name="A" scope="instance" type="void">
                     <arguments>
                         <argument name="x" type="int"/>
                         <argument name="y" type="int"/>
@@ -37,7 +37,7 @@
                 <method name="~A" scope="instance" type="void">
                     <arguments/>
                 </method>
-                <method name="A" scope="instance" type="A">
+                <method name="A" scope="instance" type="void">
                     <arguments>
                         <argument name="x" type="int"/>
                     </arguments>
