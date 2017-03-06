@@ -188,10 +188,6 @@ echo -n $? > ${LOG_PATH}test09.!!!
 $INTERPRETER $TASK.$EXTENSION --details --input=${LOCAL_IN_PATH3}test10.in --output=${LOCAL_OUT_PATH}test10.out 2> ${LOG_PATH}test10.err
 echo -n $? > ${LOG_PATH}test10.!!!
 
-# test11: Vyhledavani pomoci XPath; Expected output: test11.out; Expected return code: 0
-$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test11.in --output=${LOCAL_OUT_PATH2}test11.out --details --search="/model/class[*/attributes/attribute/@name='var']/@name" 2> ${LOG_PATH}test11.err
-echo -n $? > ${LOG_PATH}test11.!!!
-
 # test12: BONUS: vypis konfliktniho clenu ve tride; Expected output: test12.out; Expected return code: 0
 $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH3}test12.in --output=${LOCAL_OUT_PATH}test12.out --details=C --conflicts 2> ${LOG_PATH}test12.err
 echo -n $? > ${LOG_PATH}test12.!!!
@@ -231,10 +227,6 @@ echo -n $? > ${LOG_PATH}test020.!!!
 # test021: Declared class cannot be used as base class; Expected output: -; Expected return code: 4
 $INTERPRETER $TASK.$EXTENSION --details=B --input=${LOCAL_IN_PATH3}test021.in --output=${LOCAL_OUT_PATH}test021.out 2> ${LOG_PATH}test021.err
 echo -n $? > ${LOG_PATH}test021.!!!
-
-# test22: Test 11 but result from Xpath is a whole element: test22.out; Expected return code: 0
-$INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test11.in --output=${LOCAL_OUT_PATH2}test022.out --details=B --search="/class/." 2> ${LOG_PATH}test022.err
-echo -n $? > ${LOG_PATH}test022.!!!
 
 # test23: test for methods and instances declaration and definitions - INVALID: test23.out; Expected return code: 4
 $INTERPRETER $TASK.$EXTENSION --input=${LOCAL_IN_PATH}test023.in --output=${LOCAL_OUT_PATH2}test023.out --details=B 2> ${LOG_PATH}test023.err
